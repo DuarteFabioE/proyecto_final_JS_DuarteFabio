@@ -1,0 +1,20 @@
+[
+    {"id":1,
+        "nombre": "Suarez Kamizani",
+        "horario":"35",
+        "valor":"CROSSFIT",
+        "img":"https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+    },
+    {"id":2,
+        "nombre": "Matias Duran",
+        "horario":"35",
+        "valor":"CROSSFIT",
+        "img":"https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+    },
+    {"id":3,
+        "nombre": "Alicia Salas",
+        "horario":"35",
+        "valor":"CROSSFIT",
+        "img":"https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+    }
+    ]
