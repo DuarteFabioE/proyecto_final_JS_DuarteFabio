@@ -1,0 +1,20 @@
+[
+    {"id":1,
+        "nombre": "La Mascara del Zorro",
+        "horario":"22.00hs",
+        "valor":"$ 250",
+        "img":"https://www.clarin.com/espectaculos/teatro/image/hamlet_25735.jpg"
+    },
+    {"id":2,
+        "nombre": "Dracula",
+        "horario":"22.00hs",
+        "valor":"$ 250",
+        "img":"https://lastfm.freetls.fastly.net/i/u/300x300/5fc885f9d4eb4ce57007da703f818b01"
+    },
+    {"id":3,
+        "nombre": "Harry",
+        "horario":"22.00hs",
+        "valor":"$ 250",
+        "img":"https://www.clarin.com/espectaculos/teatro/image/macbeth_28359.jpg"
+    }
+    ]

@@ -10,7 +10,7 @@ function programarMenuInicial() {
 }
 
 function cargarPosts() {
-   fetch('http://127.0.0.1:5500/js/data/profesores.json')
+   fetch('http://127.0.0.1:5500/js/data/entrada.json')
       .then((response) => response.json())
       .then((json) => mostrarDatos(json))
       .catch(() => alert("intente de nuevo"))
@@ -39,7 +39,7 @@ function mostrarDatos(data) {
                           
       `
       const btn = document.createElement("button")
-      btn.innerText = "Infrmacion personal"
+      btn.innerText = "Comprar Boleto"
       btn.addEventListener("click", () =>
 
          cargarPost(id)
@@ -65,7 +65,7 @@ function agregarPost() {
    let title = prompt("Ingrese el titulo")
    let contenido = prompt("Ingrese el contenido")
 
-   fetch('http://127.0.0.1:5500/js/data/profesores.json', {
+   fetch('http://127.0.0.1:5500/js/data/entrada.json', {
       method: 'POST',
       body: JSON.stringify({
          title: title,
@@ -83,9 +83,9 @@ function agregarPost() {
 }
 
 function cargarPost(id) {
-        fetch(`http://127.0.0.1:5500/js/data/profesores.json`)
+        fetch(`http://127.0.0.1:5500/js/data/entrada.json`)
         .then((response) => response.json())
-        .then((json) => window.location="../index.html")
+        .then((json) => window.location="comprar.html")
    
 
  }
