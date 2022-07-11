@@ -1,20 +1,20 @@
 [
     {"id":1,
-        "nombre": "Suarez Kamizani",
-        "horario":"35",
-        "valor":"CROSSFIT",
-        "img":"https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        "nombre": "La Mascara del Zorro",
+        "horario":"22.00hs",
+        "valor":"$ 250",
+        "img":"https://www.clarin.com/espectaculos/teatro/image/hamlet_25735.jpg"
     },
     {"id":2,
-        "nombre": "Matias Duran",
-        "horario":"35",
-        "valor":"CROSSFIT",
-        "img":"https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+        "nombre": "Dracula",
+        "horario":"22.00hs",
+        "valor":"$ 250",
+        "img":"https://lastfm.freetls.fastly.net/i/u/300x300/5fc885f9d4eb4ce57007da703f818b01"
     },
     {"id":3,
-        "nombre": "Alicia Salas",
-        "horario":"35",
-        "valor":"CROSSFIT",
-        "img":"https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+        "nombre": "Harry",
+        "horario":"22.00hs",
+        "valor":"$ 250",
+        "img":"https://www.clarin.com/espectaculos/teatro/image/macbeth_28359.jpg"
     }
-    ]
+]

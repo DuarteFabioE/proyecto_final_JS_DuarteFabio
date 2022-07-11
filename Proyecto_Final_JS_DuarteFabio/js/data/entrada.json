@@ -1,20 +1,20 @@
 [
     {"id":1,
-        "nombre": "La Mascara del Zorro",
+        "nombre": "Ella en mi cabeza",
         "horario":"22.00hs",
         "valor":"$ 250",
-        "img":"https://www.clarin.com/espectaculos/teatro/image/hamlet_25735.jpg"
+        "img":"https://www.lanacion.com.ar/resizer/KjmV93Y-k5UEc6jACtgXiQW_0Ck=/300x300/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/X6JA6NPASNGT5E724NKGHVTDD4.png"
     },
     {"id":2,
-        "nombre": "Dracula",
+        "nombre": "inmaduros",
         "horario":"22.00hs",
         "valor":"$ 250",
-        "img":"https://lastfm.freetls.fastly.net/i/u/300x300/5fc885f9d4eb4ce57007da703f818b01"
+        "img":"https://www.lanacion.com.ar/resizer/Z7hm1FX6uXw1XuGHUbKYsnuJphw=/300x300/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/2B7LUFENA5EL3OT4XFEL2P2L7A.png"
     },
     {"id":3,
-        "nombre": "Harry",
+        "nombre": "Ciro Olimpus",
         "horario":"22.00hs",
         "valor":"$ 250",
-        "img":"https://www.clarin.com/espectaculos/teatro/image/macbeth_28359.jpg"
+        "img":"https://carteleradeteatro.mx/wp-content/uploads/2020/07/hercules-online_300.jpg"
     }
     ]
