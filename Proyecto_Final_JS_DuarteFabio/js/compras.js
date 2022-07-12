@@ -1,4 +1,5 @@
-crearMenu();
+
+crearMenu()
 
 function crearMenu()
 {
@@ -7,100 +8,154 @@ function crearMenu()
      const boton = document.createElement("button");
      boton.innerHTML=opcion;
 
-     if(opcion === "Mis Entradas")
-     {
-         boton.addEventListener("click", ()=>{  
-             listarUsuarios(compras);
-         })
-     }
+      if (opcion === "Mis Entradas") {
+        boton.addEventListener("click", () => {
+            listarCompras(compras);
+        });
+    } 
 
-      else if(opcion === "Cancelar Compra")
-     {
-         boton.addEventListener("click", ()=>{
-          
-             eliminarUsuario();
-             listarUsuarios(compras);  
-        })
-     }
-   
-     document.body.appendChild(boton);
-     });   
+    if (opcion === "Cancelar Compra") {
+      boton.addEventListener("click", () => {
+        eliminarCompra();
+        listarCompras(compras);
+      });
+  } 
+    document.body.appendChild(boton);
+});
 }
 
-function listarUsuarios(listaUsuarios)
-{
-   let miLista = document.querySelector("#listaUsuarios");
-   if(!miLista)
-   {
-     miLista = document.createElement("table");
-     miLista.setAttribute("id", "listaUsuarios");
-   }
-   miLista.innerHTML="";
+function listarCompras(listaCompras) {
+  let miLista = document.querySelector("#listaCompras");
+  if (!miLista) {
+      miLista = document.createElement("table");
+      miLista.setAttribute("id", "listaCompras");
+  }
+  miLista.innerHTML = "";
 
-   const encabezado = document.createElement("tr");
-   
-   const tdId = document.createElement("th");
-   tdId.innerHTML="id";
-   encabezado.appendChild(tdId);
+  const encabezado = document.createElement("tr");
 
-   const tdNombre = document.createElement("th");
-   tdNombre.innerHTML="nombre";
-   encabezado.appendChild(tdNombre);
+  const tdId = document.createElement("th");
+  tdId.innerHTML = "Id";
+  encabezado.appendChild(tdId);
 
-   const tdApellido = document.createElement("th");
-   tdApellido.innerHTML="apellido";
-   encabezado.appendChild(tdApellido);
+  const tdNombre = document.createElement("th");
+  tdNombre.innerHTML = "Nombre";
+  encabezado.appendChild(tdNombre);
 
-   const tdEmail = document.createElement("th");
-   tdEmail.innerHTML="email";
-   encabezado.appendChild(tdEmail);
+  const tdApellido = document.createElement("th");
+  tdApellido.innerHTML = "Apellido:";
+  encabezado.appendChild(tdApellido);
 
-    const tdTel = document.createElement("th");
-   tdTel.innerHTML="tel";
-   encabezado.appendChild(tdTel);
+  const tdEmail = document.createElement("th");
+  tdEmail.innerHTML = "Email";
+  encabezado.appendChild(tdEmail);
 
-    const tdFecha = document.createElement("th");
-   tdFecha.innerHTML="fecha";
-   encabezado.appendChild(tdFecha);
+  const tdTelefono = document.createElement("th");
+  tdTelefono.innerHTML = "Telefono";
+  encabezado.appendChild(tdTelefono);
 
-   const tdCantidad = document.createElement("th");
-   tdCantidad.innerHTML="cantidad";
-   encabezado.appendChild(tdCantidad);
+  const tdFecha = document.createElement("th");
+  tdFecha.innerHTML = "Fecha";
+  encabezado.appendChild(tdFecha);
 
-   miLista.appendChild(encabezado)
-   
-   listaCompras.forEach((compra)=>{
-       const nodotr = document.createElement("tr");
-       let nodotd = document.createElement("td");
-       nodotd.innerHTML=`${compra.id}`;
-       nodotr.appendChild(nodotd);
+  const tdCantidad = document.createElement("th");
+  tdCantidad.innerHTML = "Cantidad";
+  encabezado.appendChild(tdCantidad);
 
-       nodotd = document.createElement("td");
-       nodotd.innerHTML=`${compra.nombre}`;
-       nodotr.appendChild(nodotd);
+  miLista.appendChild(encabezado);
 
-       nodotd = document.createElement("td");
-       nodotd.innerHTML=`${compra.apellido}`;
-       nodotr.appendChild(nodotd);
+  listaCompras.forEach((compra) => {
+      const nodotr = document.createElement("tr");
+      let nodotd = document.createElement("td");
+      nodotd.innerHTML = `${compra.id}`;
+      nodotr.appendChild(nodotd);
 
-         nodotd = document.createElement("td");
-       nodotd.innerHTML=`${compra.email}`;
-       nodotr.appendChild(nodotd);
+      nodotd = document.createElement("td");
+      nodotd.innerHTML = `${compra.nombre}`;
+      nodotr.appendChild(nodotd);
 
-         nodotd = document.createElement("td");
-       nodotd.innerHTML=`${compra.tel}`;
-       nodotr.appendChild(nodotd);
+      nodotd = document.createElement("td");
+      nodotd.innerHTML = `${compra.apellido}`;
+      nodotr.appendChild(nodotd);
 
-       nodotd = document.createElement("td");
-       nodotd.innerHTML=`${compra.fecha}`;
-       nodotr.appendChild(nodotd);
+      nodotd = document.createElement("td");
+      nodotd.innerHTML = `${compra.email}`;
+      nodotr.appendChild(nodotd);
 
-       nodotd = document.createElement("td");
-       nodotd.innerHTML=`${compra.cantidad}`;
-       nodotr.appendChild(nodotd);
+      nodotd = document.createElement("td");
+      nodotd.innerHTML = `${compra.telefono}`;
+      nodotr.appendChild(nodotd);
 
-       miLista.appendChild(nodotr);
-   });
+      nodotd = document.createElement("td");
+      nodotd.innerHTML = `${compra.fecha}`;
+      nodotr.appendChild(nodotd);
 
-   document.body.appendChild(miLista);
+      nodotd = document.createElement("td");
+      nodotd.innerHTML = `${compra.cantidad}`;
+      nodotr.appendChild(nodotd);
+
+      miLista.appendChild(nodotr);
+  });
+
+  document.body.appendChild(miLista);
 }
+
+function  eliminarCompra() {
+  let id = Number(prompt("Ingrese el id de la compra que desea cancelar"));
+
+  let encontrado = compras.find((compra) => compra.id === id);
+
+  if (!encontrado) {
+      localStorage.setItem("compras", JSON.stringify(compras));
+      Swal.fire({
+          title: "Compra no registrada",
+          icon: "success",
+          confirmButtonText: "OK",
+      });
+  } else {
+      let index = compras.indexOf(encontrado);
+
+      compras.splice(index, 1);
+
+      localStorage.setItem("compras", JSON.stringify(compras));
+      Swal.fire({
+          title: "Compra eliminada con exito",
+          icon: "success",
+          confirmButtonText: "OK",
+      });
+  }
+}
+
+const btn = document.getElementById('botom');
+btn.addEventListener('click', () => {
+  agregarCompra()
+  function agregarCompra()
+{      
+    let id=1;
+    if(compras.length>0)
+    {
+       id=compras[compras.length-1].id+1;
+    }
+    
+    let nombre = document.getElementById('nombre').value;
+    let apellido = document.getElementById('apellido').value;
+    let email = document.getElementById('email').value;;
+    let telefono = document.getElementById('telefono').value;
+    let fecha = document.getElementById('fecha').value;
+    let cantidad = document.getElementById('cantidad').value;
+    let compra = new Compras(id, nombre, apellido, email, telefono, fecha, cantidad);
+
+    compras.push(compra);
+    console.log("ALMACENADO");
+    localStorage.setItem("compras", JSON.stringify(compras));
+
+    Swal.fire(  {
+            title:'Compra efectuada con exito',
+            icon: 'success',
+            confirmButtonText: 'OK',  
+        }
+       )
+}
+  listarCompras(compras);
+})
+
